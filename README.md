@@ -4,7 +4,7 @@ Este repositório contém o ambiente experimental desenvolvido para a disciplina
 
 ## Estrutura das Modificações (TPF-02)
 
-Diferente da primeira etapa (TPF-01), que avaliou apenas a inferência com pesos pré-treinados, este pipeline realiza o *fine-tuning* completo do zero aplicando:
+Diferente da primeira etapa (TPF-01), que avaliou apenas a inferência com pesos pré-treinados, nesta segunda etapa foi realizado o *fine-tuning* completo do zero aplicando:
 1. **Dimensão dos Dados:** *Data Augmentation* estático via WordNet (substituição aleatória de 10% dos tokens por sinônimos).
 2. **Dimensão Arquitetural:** Nova cabeça de classificação baseada em uma rede MLP Customizada em PyTorch ($768 \times 768 \rightarrow \text{ReLU} \rightarrow 768 \times 256 \rightarrow \text{ReLU} \rightarrow 2
 \text{ saídas}$).
@@ -13,7 +13,7 @@ Diferente da primeira etapa (TPF-01), que avaliou apenas a inferência com pesos
 
 ---
 
-## 🛠️ Instruções de Execução no Google Colab
+## Instruções de Execução no Google Colab
 
 Para reproduzir os experimentos e coletar as métricas sem quebras de escopo, siga estritamente a ordem de execução abaixo:
 
@@ -35,5 +35,3 @@ Para disparar o treinamento final do modelo com a nova topologia, execute sequen
 
 * **Modelo pré-treinado (TPF-01):** 91.06% de acurácia (linha de referência).
 * **Modelo Customizado (TPF-02):** **90.13% de acurácia** máxima atingida na Época 3.
-
-O repositório expõe em seu relatório final uma detalhada discussão matemática e qualitativa elucidando os impactos da descontextualização semântica de dicionários estáticos frente aos mecanismos de autoatenção profunda.
